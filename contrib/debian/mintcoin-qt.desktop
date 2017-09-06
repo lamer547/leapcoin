@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Leapcoin
+Comment=Leapcoin P2P Cryptocurrency
+Comment[fr]=Leapcoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Leapcoin, eşten eşe kriptografik sanal para birimi
+Comment[es]=Leapcoin, una criptomoneda P2P
+Exec=/usr/bin/leapcoin-qt
+Terminal=false
+Type=Application
+Icon=/usr/share/pixmaps/bitcoin80.xpm
+MimeType=x-scheme-handler/leapcoin;
+Categories=Office;

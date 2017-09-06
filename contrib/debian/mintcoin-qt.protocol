@@ -1,0 +1,11 @@
+[Protocol]
+exec=leapcoin-qt '%u'
+protocol=leapcoin
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

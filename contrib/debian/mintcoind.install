@@ -1,0 +1,2 @@
+debian/bin/leapcoind usr/bin
+src/leapcoind usr/lib/leapcoin

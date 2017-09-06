@@ -1,0 +1,5 @@
+leapcoin-qt usr/bin
+share/pixmaps/bitcoin32.xpm usr/share/pixmaps
+share/pixmaps/bitcoin80.xpm usr/share/pixmaps
+debian/leapcoin-qt.desktop usr/share/applications
+debian/leapcoin-qt.protocol usr/share/kde4/services/
