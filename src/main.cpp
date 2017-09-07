@@ -2578,9 +2578,9 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1504755493;
+        block.nTime    = 1504758598;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 5912473;
+        block.nNonce   = 6651222;
         
         if (false  && (block.GetHash() != hashGenesisBlock)) {
 
