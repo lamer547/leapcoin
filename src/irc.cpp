@@ -302,16 +302,16 @@ void ThreadIRCSeed2(void* parg)
         }
 
         if (fTestNet) {
-            Send(hSocket, "JOIN #LeapcoinTEST2\r");
-            Send(hSocket, "WHO #LeapcoinTEST2\r");
+            Send(hSocket, "JOIN #MonducoinTEST2\r");
+            Send(hSocket, "WHO #MonducoinTEST2\r");
         } else {
-            // randomly join #Leapcoin00-#Leapcoin05
+            // randomly join #Monducoin00-#Monducoin05
             // int channel_number = GetRandInt(5);
 
             // Channel number is always 0 for initial release
             int channel_number = 0;
-            Send(hSocket, strprintf("JOIN #Leapcoin%02d\r", channel_number).c_str());
-            Send(hSocket, strprintf("WHO #Leapcoin%02d\r", channel_number).c_str());
+            Send(hSocket, strprintf("JOIN #Monducoin%02d\r", channel_number).c_str());
+            Send(hSocket, strprintf("WHO #Monducoin%02d\r", channel_number).c_str());
         }
 
         int64 nStart = GetTime();
