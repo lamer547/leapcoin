@@ -46,7 +46,7 @@ unsigned int nStakeMaxAge = 60 * 60 * 24 * 100;	// stake age of full weight: -1
 unsigned int nStakeTargetSpacing = 90;			// 90 sec block spacing
 
 int64 nChainStartTime = 1397400948;
-int nCoinbaseMaturity = 350;
+int nCoinbaseMaturity = 20;
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
 CBigNum bnBestChainTrust = 0;
@@ -936,12 +936,12 @@ int generateMTRandom(unsigned int s, int range)
 
 
 
-static const int64 nMinSubsidy = 10 * COIN;
+static const int64 nMinSubsidy = 100 * COIN;
 static const int CUTOFF_HEIGHT = 10000;	// Height at the end of 5 weeks
 // miner's coin base reward based on nBits
 int64 GetProofOfWorkReward(int nHeight, int64 nFees, uint256 prevHash)
 {
-	int64 nSubsidy = 30000 * COIN;
+	int64 nSubsidy = 100000 * COIN;
 
     std::string cseed_str = prevHash.ToString().substr(14,7);
     const char* cseed = cseed_str.c_str();
@@ -963,11 +963,6 @@ int64 GetProofOfWorkReward(int nHeight, int64 nFees, uint256 prevHash)
 	{
 		return nMinSubsidy + nFees;
 	}
-
-
-	
-     
-
     return nSubsidy + nFees;
 }
 
@@ -994,7 +989,7 @@ int64 GetProofOfStakeReward(int64 nCoinAge, unsigned int nBits, unsigned int nTi
     return nSubsidy;
 }
 
-static const int64 nTargetTimespan = 30 * 30;  
+static const int64 nTargetTimespan = 24 * 60 * 60 / 2; //half day  
 static const int64 nTargetSpacingWorkMax = 3 * nStakeTargetSpacing; 
 
 //
@@ -2578,9 +2573,9 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1504758598;
+        block.nTime    = 1506915693;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 6651222;
+        block.nNonce   = 0;
         
         if (false  && (block.GetHash() != hashGenesisBlock)) {
 
@@ -2604,7 +2599,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.nTime = %u \n", block.nTime);
         printf("block.nNonce = %u \n", block.nNonce);
 
-        assert(block.hashMerkleRoot == uint256("0xf6c4b1f57acf70f98ad8074fe9e3db608ddcb4dad4ab7cb1960eaebd8e9d379f"));
+        assert(block.hashMerkleRoot == uint256("0x"));
 		assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
 
         // Start new block file
